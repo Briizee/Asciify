@@ -1,4 +1,4 @@
-# avatar-app
+# asciify
 
 ## Project setup
 ```
