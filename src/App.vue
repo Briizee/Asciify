@@ -1,38 +1,37 @@
 <template>
+<v-app>
   <div id="app">
-    <pre class="ascii">{{text}}</pre>
+    <!-- <pre class="ascii">{{text}}</pre> -->
+    <input-dialog @text="getText($event)" @font="getFont($event)"></input-dialog>
+    <board v-bind:font="font" v-bind:text="text"/>
   </div>
+</v-app>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import figlet, { fonts } from 'figlet';
 import * as Fonts from './fontsImports';
+import InputDialog from './components/input-dialog.vue';
+import Board from './components/board.vue';
 
-@Component({})
+@Component({
+  components: {
+    InputDialog,
+    Board,
+  },
+})
 export default class App extends Vue {
   text = ''
+
   font = ''
 
-  mounted() {
-    this.fetchList();
-
-    (figlet as any).parseFont('Standard', `${Fonts.Standard}`);
-
-    (figlet as any).text('oh hi binnit', {
-      font: 'Standard',
-      horizontalLayout: 'default',
-      verticalLayout: 'default',
-      width: 80,
-      whitespaceBreak: true,
-    }, (err: any, data: any) => {
-      this.text = data;
-      console.log(this.text, 'text');
-    });
+  getText(event: string) {
+    this.text = event;
   }
 
-  fetchList() {
-    return Object.keys(Fonts);
+  getFont(event: string) {
+    this.font = event;
   }
 }
 </script>
@@ -44,7 +43,13 @@ export default class App extends Vue {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
+}
+
+input-dialog {
+  position: fixed;
+  top: 0px;
+  left: 0px;
 }
 
 .ascii {
