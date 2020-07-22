@@ -4,6 +4,7 @@
       color="purple"
       v-model="textInput"
       label="Input text here"
+      maxlength="5"
       clearable
       outlined
     ></v-text-field>

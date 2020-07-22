@@ -2,10 +2,12 @@
   <div class="board-grid">
   <v-container fill-height>
       <v-row
+      fill-height
       align="center"
       justify="center"
       no-gutters >
           <v-col
+          class="row1columns"
           justify="center"
           align="center"
           v-for="n in 3"
@@ -15,8 +17,13 @@
           <pre>{{ outputText }}</pre>
           </v-col>
       </v-row>
-      <v-row no-gutters >
+      <v-row
+      fill-height
+      align="center"
+      justify="center"
+      no-gutters >
           <v-col
+          class="row2columns"
           justify="center"
           align="center"
           v-for="n in 3"
@@ -26,8 +33,13 @@
           <pre>{{ outputText }}</pre>
           </v-col>
       </v-row>
-      <v-row no-gutters >
+      <v-row
+      fill-height
+      align="center"
+      justify="center"
+      no-gutters >
           <v-col
+          class="row3columns"
           justify="center"
           align="center"
           v-for="n in 3"
@@ -94,5 +106,43 @@ export default class Board extends Vue {
 .board-grid {
     height: 100%;
     text-align: center;
+    background-color: black;
 }
+
+.row1columns:nth-child(1) {
+  color:mediumvioletred;
+}
+
+.row1columns:nth-child(2) {
+  color: greenyellow;
+}
+
+.row1columns:nth-child(3) {
+  color:mediumvioletred;
+}
+
+.row2columns:nth-child(2) {
+  color:mediumvioletred;
+}
+
+.row2columns:nth-child(1) {
+  color: greenyellow;
+}
+
+.row2columns:nth-child(3) {
+  color: greenyellow;
+}
+
+.row3columns:nth-child(1) {
+  color:mediumvioletred;
+}
+
+.row3columns:nth-child(2) {
+  color: greenyellow;
+}
+
+.row3columns:nth-child(3) {
+  color:mediumvioletred;
+}
+
 </style>
