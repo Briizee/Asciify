@@ -1,5 +1,7 @@
 # asciify
 
+This app turns input text into ascii art and has several ascii art styles to choose from. 
+
 ## Project setup
 ```
 npm install
