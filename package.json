@@ -18,7 +18,7 @@
     "vue-axios": "^2.1.5",
     "vue-class-component": "^7.2.3",
     "vue-property-decorator": "^8.4.2",
-    "vuetify": "^2.2.11"
+    "vuetify": "^2.6.10"
   },
   "devDependencies": {
     "@types/node": "^14.0.24",
